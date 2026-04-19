@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('fiverr_db', 'root', 'your_actual_password', {
-    host: 'localhost',
+const sequelize = new Sequelize('fiverr_clone', 'root', 'salwa1792006-', {
+    host: '127.0.0.1',
     dialect: 'mysql'
 });
 
