@@ -15,7 +15,9 @@
     "bcrypt": "^6.0.0",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
-    "prisma": "^7.7.0"
+    "mysql2": "^3.22.1",
+    "prisma": "^7.7.0",
+    "sequelize": "^6.37.8"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
