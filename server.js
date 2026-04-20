@@ -1,16 +1,18 @@
 const express = require('express');
-const sequelize = require('./config/database');
-const userRoutes = require('./routes/userRoutes');
-
 const app = express();
-app.use(express.json()); // This allows your server to read JSON from Postman
 
-// Routes
+const models = require('./models');
+const sequelize = require('./config/database');
+
+app.use(express.json());
+
+const userRoutes = require('./routes/userRoutes');
+const gigRoutes = require('./routes/gigRoutes');
+
 app.use('/api/users', userRoutes);
+app.use('/api/gigs', gigRoutes);
 
 const PORT = 3000;
-sequelize.sync().then(() => {
-    app.listen(PORT, () => {
-        console.log(` Server running on http://localhost:${PORT}`);
-    });
+app.listen(PORT, () => {
+    console.log(` Server running on http://localhost:${PORT}`);
 });
