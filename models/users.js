@@ -11,5 +11,10 @@ const User = sequelize.define('User', {
         defaultValue: 'buyer'
     }
 }, { timestamps: true });
+const bcrypt = require('bcryptjs');
 
+User.beforeCreate(async (user) => {
+    const salt = await bcrypt.genSalt(10);
+    user.password_hash = await bcrypt.hash(user.password_hash, salt);
+});
 module.exports = User;
